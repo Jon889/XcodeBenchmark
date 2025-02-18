@@ -9,19 +9,19 @@ jobs:
   #         chmod +x benchmark.sh
   #         ./benchmark.sh
       
-  macOS15ASLarge:
-    runs-on: macos-15-xlarge
-    steps:
-      - uses: actions/checkout@v4
-      - run: |
-          chmod +x benchmark.sh
-          ./benchmark.sh
-
-  # macOS15Intel:
-  #   runs-on: macos-15-large
-  #   needs: macOS15ASLarge
+  # macOS15ASLarge:
+  #   runs-on: macos-15-xlarge
   #   steps:
   #     - uses: actions/checkout@v4
   #     - run: |
   #         chmod +x benchmark.sh
   #         ./benchmark.sh
+
+  macOS15Intel:
+    runs-on: macos-15-large
+    needs: macOS15ASLarge
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          chmod +x benchmark.sh
+          ./benchmark.sh
