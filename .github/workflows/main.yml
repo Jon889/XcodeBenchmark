@@ -4,14 +4,17 @@ jobs:
   macOS15AS:
     runs-on: macos-15
     steps:
+      - uses: actions/checkout@v4
       - run: ./benchmark.sh
       
   macOS15ASLarge:
     runs-on: macos-15-xlarge
     steps:
+      - uses: actions/checkout@v4
       - run: ./benchmark.sh
 
   macOS15Intel:
     runs-on: macos-15-large
     steps:
+      - uses: actions/checkout@v4
       - run: ./benchmark.sh
