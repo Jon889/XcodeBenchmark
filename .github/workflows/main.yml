@@ -5,16 +5,24 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
-      - run: ./benchmark.sh
+      - run: |
+          chmod +x benchmark.sh
+          ./benchmark.sh
       
   macOS15ASLarge:
     runs-on: macos-15-xlarge
+    needs: macOS15AS
     steps:
       - uses: actions/checkout@v4
-      - run: ./benchmark.sh
+      - run: |
+          chmod +x benchmark.sh
+          ./benchmark.sh
 
   macOS15Intel:
     runs-on: macos-15-large
+    needs: macOS15ASLarge
     steps:
       - uses: actions/checkout@v4
-      - run: ./benchmark.sh
+      - run: |
+          chmod +x benchmark.sh
+          ./benchmark.sh
