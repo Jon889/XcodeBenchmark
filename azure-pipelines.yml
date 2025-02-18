@@ -11,5 +11,6 @@ pool:
 
 steps:
 - script: |
-    ls -lah
+    chmod +x benchmark.sh
+    ./benchmark.sh
   displayName: 'Run a multi-line script'
